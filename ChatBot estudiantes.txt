@@ -1,0 +1,31 @@
+import datetime
+
+print("Hola, soy EduBot, tu asistente virtual para estudiar.")
+print("Puedes hacerme preguntas como:")
+print("- ¿Qué día es hoy?")
+print("- ¿Qué me recomiendas para estudiar?")
+print("- ¿Cuáles son tus comandos disponibles?")
+print("- ¿Qué técnicas recomiendas para memorizar?")
+print("Escribe 'salir' para terminar.\n")
+
+while True:
+    mensaje = input("Tú: ").lower()
+
+    if mensaje == "salir":
+        print("EduBot: ¡Hasta luego! ¡Mucho éxito en tus estudios!")
+        break
+    elif "qué día es hoy" in mensaje:
+        hoy = datetime.datetime.now()
+        print("EduBot: Hoy es", hoy.strftime("%A, %d de %B de %Y"))
+    elif "qué me recomiendas para estudiar" in mensaje:
+        print("EduBot: Te recomiendo repasar tus apuntes, hacer mapas mentales y practicar con ejercicios.")
+    elif "cuáles son tus comandos disponibles" in mensaje:
+        print("EduBot: Puedes preguntarme lo siguiente:\n"
+              "- ¿Qué día es hoy?\n"
+              "- ¿Qué me recomiendas para estudiar?\n"
+              "- ¿Cuáles son tus comandos disponibles?\n"
+              "- ¿Qué técnicas recomiendas para memorizar?")
+    elif "qué técnicas recomiendas para memorizar" in mensaje:
+        print("EduBot: Puedes usar técnicas como la repetición espaciada, reglas mnemotécnicas y hacer resúmenes visuales.")
+    else:
+        print("EduBot: Lo siento, no entendí tu pregunta. Prueba con otro comando.")
